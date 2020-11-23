@@ -1,7 +1,7 @@
 # jwt-task
 Please run both the frontend SPA and backend API to test.
 
-To test, you can use the following credentials. Any other usernames will result in a 404 on the backend.
+To test, you can use the following credentials.
 ```
 <username>:<password>
 jrocket:jrocket
