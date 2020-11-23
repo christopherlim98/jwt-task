@@ -32,7 +32,7 @@ To test the backend, a rest client is provided. The rest client can be found in:
 backend/src/main/resources/static/RestClient.http
 ```
 
-## Useful Directories:
+## Useful Directories
 
 #### "backend/src/main/java/auth/security/" 
 	
