@@ -1,0 +1,19 @@
+### User jrocket
+POST http://localhost:8081/sso/authorize/1/jrocket
+Authorization: Basic jrcket jrocket
+
+### User suspended
+POST http://localhost:8081/sso/authorize/1/suspended
+Authorization: Basic suspended suspended
+
+### User tcrews
+POST http://localhost:8081/sso/authorize/1/tcrews
+Authorization: Basic tcrews tcrews
+
+### User forbidden (403). E.g. jrocket looking at tcrews' account
+POST http://localhost:8081/sso/authorize/1/tcrews
+Authorization: Basic jrocket jrocket
+
+### User not found (404).
+POST http://localhost:8081/sso/authorize/1/jrock
+Authorization: Basic jrocket jrocket
