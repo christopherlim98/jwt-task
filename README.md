@@ -18,7 +18,8 @@ npm install
 npm run start
 ```
 JWTs are parsed using the `auth0.jwt-decode` package.
-## Back end
+
+## Backend API
 The backend is a rest-controller API built using Spring-Boot.
 
 To run the backend:
