@@ -93,7 +93,7 @@ function Login({ handleSubmit, setUser, setPass }) {
       <Form.Row>
 
         <InputGroup
-          type="text"
+          type="password"
           onChange={e => setPass(e.target.value)}
         >
           <FormControl id="inlineFormInputGroup" placeholder="Password" />
