@@ -18,12 +18,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepo;
 
-    public User findById(long id) {
-        return userRepo.findById(id)
-                .orElseThrow(() -> new UserNotFoundException(id));
-    }
-
-
     public User findByUsername(String username) {
         return userRepo.findByUsername(username)
                 .orElseThrow(() -> new UserNotFoundException(username));
