@@ -1,5 +1,5 @@
 import jwt_decode from "jwt-decode";
-import {encode} from 'base-64'
+import { encode } from 'base-64'
 
 /**
  * API to get profile from the backend server
@@ -12,32 +12,32 @@ import {encode} from 'base-64'
  * @param {String} username
  * @param {String} password
  */
-export async function getProfile (username,password) {
+export async function getProfile(username, password) {
     var url = `http://localhost:8081/sso/authorize/1/${username}`;
     return await fetch(url, {
         method: 'post',
         headers: new Headers({
-            'Authorization': 'Basic '+encode(username+":"+password),
+            'Authorization': 'Basic ' + encode(username + ":" + password),
             'Content-Type': 'application/json'
         })
-        })
-    .then((res) => {
-        if(res.status===401){
-            throw {
-                status: "unauthorised",
-                error: "unauthorised"
-            }
-        }
-        return res.json()
-        })
-    .then((jwt) => {
-
-        if (jwt.status === "success"){
-            var decoded = jwt_decode(jwt.response);
-            return decoded
-        } else if (jwt.status === "fail"){
-            throw jwt
-        }
     })
+        .then((res) => {
+            if (res.status === 401) {
+                throw {
+                    status: "unauthorised",
+                    error: "unauthorised"
+                }
+            }
+            return res.json()
+        })
+        .then((jwt) => {
+
+            if (jwt.status === "success") {
+                var decoded = jwt_decode(jwt.response);
+                return decoded
+            } else if (jwt.status === "fail") {
+                throw jwt
+            }
+        })
 
 }

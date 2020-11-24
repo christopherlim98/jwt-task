@@ -30,7 +30,7 @@ function App() {
     setLoading(true);
     evt.preventDefault();
     clearState();
-    
+
     getProfile(user, pass).then((data) => {
       setDetails(data)
       setLoading(false);
@@ -55,7 +55,7 @@ function App() {
           ? <Login handleSubmit={handleSubmit}
             setUser={setUser}
             setPass={setPass} />
-          : <Logout handleLogout = {handleLogout} /> }
+          : <Logout handleLogout={handleLogout} />}
 
       </header>
     </div>
@@ -67,12 +67,12 @@ function App() {
  * Resets state back to initial state
  * @param {function} handleLogout to handle logout
  */
-function Logout({ handleLogout }){
-  return(
+function Logout({ handleLogout }) {
+  return (
     <Col xs="auto" className="my-1">
       <Button type="logout"
-        onClick = {handleLogout}>
-          Logout
+        onClick={handleLogout}>
+        Logout
       </Button>
     </Col>
   )
@@ -88,15 +88,14 @@ function Login({ handleSubmit, setUser, setPass }) {
         >
           <FormControl id="inlineFormInputGroup" placeholder="Username" />
         </InputGroup>
-
       </Form.Row>
-          <Form.Group controlId="formGroupPassword">
-            <Form.Control
-              type="password"
-              onChange={e => setPass(e.target.value)}
-              placeholder="Password"
-            />
-          </Form.Group>
+      <Form.Group controlId="formGroupPassword">
+        <Form.Control
+          type="password"
+          onChange={e => setPass(e.target.value)}
+          placeholder="Password"
+        />
+      </Form.Group>
       <InputGroup type="submit" value="Submit" />
       <Col xs="auto" className="my-1">
         <Button type="submit">Submit</Button  >

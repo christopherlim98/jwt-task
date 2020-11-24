@@ -12,6 +12,5 @@ public class SecurityConstants {
     public static final String SURNAME_KEY = "Surname";
     public static final String EMAIL_KEY = "email";
     public static final String DEPT_KEY = "Department";
-
 }
 

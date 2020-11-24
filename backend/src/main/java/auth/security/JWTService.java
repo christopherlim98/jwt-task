@@ -48,5 +48,4 @@ public class JWTService {
             .withClaim(EMAIL_KEY, user.getEmail())
             .sign(HMAC512(SECRET.getBytes()));
     }
-
 }

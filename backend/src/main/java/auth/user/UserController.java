@@ -94,8 +94,5 @@ public class UserController {
         body.put("error", "Access forbidden as this is not your account. Please sign in with the correct credentials.");
         return new ResponseEntity<>(body, HttpStatus.FORBIDDEN);
     }
-
-
-
 }
 
