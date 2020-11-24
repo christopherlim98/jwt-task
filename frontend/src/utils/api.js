@@ -14,28 +14,30 @@ import {encode} from 'base-64'
  */
 export async function getProfile (username,password) {
     var url = `http://localhost:8081/sso/authorize/1/${username}`;
-    try{
-        return await fetch(url, {
-            method: 'post',
-            headers: new Headers({
-                'Authorization': 'Basic '+encode(username+":"+password),
-                'Content-Type': 'application/json'
-            })
-            })
-        .then((res) => res.json())
-        .then((jwt) => {
-            if (jwt.status === "success"){
-                var decoded = jwt_decode(jwt.response);
-                return decoded
-            } else if (jwt.status === "fail"){
-                throw jwt
-            }
+    return await fetch(url, {
+        method: 'post',
+        headers: new Headers({
+            'Authorization': 'Basic '+encode(username+":"+password),
+            'Content-Type': 'application/json'
         })
-    }catch (err){
-        throw {
-            status: "unauthorised",
-            error: "unauthorised"
+        })
+    .then((res) => {
+        if(res.status===401){
+            throw {
+                status: "unauthorised",
+                error: "unauthorised"
+            }
         }
-    }
+        return res.json()
+        })
+    .then((jwt) => {
+
+        if (jwt.status === "success"){
+            var decoded = jwt_decode(jwt.response);
+            return decoded
+        } else if (jwt.status === "fail"){
+            throw jwt
+        }
+    })
 
 }
