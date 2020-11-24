@@ -48,7 +48,7 @@ backend/src/main/resources/static/RestClient.http
 
 	=> The SPA containing the front-end logic
 
-#### "frontend/src/utils/api.js
+#### "frontend/src/utils/api.js"
 
 	=> To decode JWT and fetch data from the backend API
 
