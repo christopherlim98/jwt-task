@@ -30,7 +30,7 @@ function App() {
     setLoading(true);
     evt.preventDefault();
     clearState();
-
+    
     getProfile(user, pass).then((data) => {
       setDetails(data)
       setLoading(false);
@@ -90,18 +90,16 @@ function Login({ handleSubmit, setUser, setPass }) {
         </InputGroup>
 
       </Form.Row>
-      <Form.Row>
-
-        <InputGroup
-          type="password"
-          onChange={e => setPass(e.target.value)}
-        >
-          <FormControl id="inlineFormInputGroup" placeholder="Password" />
-        </InputGroup>
-      </Form.Row>
+          <Form.Group controlId="formGroupPassword">
+            <Form.Control
+              type="password"
+              onChange={e => setPass(e.target.value)}
+              placeholder="Password"
+            />
+          </Form.Group>
       <InputGroup type="submit" value="Submit" />
       <Col xs="auto" className="my-1">
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Submit</Button  >
       </Col>
     </Form>
   )
