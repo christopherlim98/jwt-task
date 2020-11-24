@@ -14,6 +14,7 @@ The frontend is a simple Single Page Application built on react.
 
 To run the front-end:
 ```
+cd frontend
 npm install
 npm run start
 ```
@@ -24,6 +25,7 @@ The backend is a rest-controller API built using Spring-Boot.
 
 To run the backend:
 ```
+cd backend
 ./mvnw spring-boot:run
 ```
 
@@ -46,7 +48,7 @@ backend/src/main/resources/static/RestClient.http
 
 	=> The SPA containing the front-end logic
 
-#### "frontend/src/utils/api.js
+#### "frontend/src/utils/api.js"
 
 	=> To decode JWT and fetch data from the backend API
 
