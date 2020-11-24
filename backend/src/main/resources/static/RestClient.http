@@ -1,6 +1,6 @@
 ### User jrocket
 POST http://localhost:8081/sso/authorize/1/jrocket
-Authorization: Basic jrcket jrocket
+Authorization: Basic jrocket jrocket
 
 ### User suspended
 POST http://localhost:8081/sso/authorize/1/suspended

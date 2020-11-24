@@ -5,7 +5,6 @@ import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.Base64;
 import java.util.Date;
 import java.util.stream.Collectors;
 
@@ -15,10 +14,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import static auth.security.SecurityConstants.AUTHORITIES_KEY;
-import static auth.security.SecurityConstants.BASIC_PREFIX;
-import static auth.security.SecurityConstants.BEARER_PREFIX;
 import static auth.security.SecurityConstants.EXPIRATION_TIME;
-import static auth.security.SecurityConstants.AUTH_HEADER_KEY;
 import static auth.security.SecurityConstants.AUDIENCE;
 import static auth.security.SecurityConstants.SECRET;
 import static auth.security.SecurityConstants.ISSUER;

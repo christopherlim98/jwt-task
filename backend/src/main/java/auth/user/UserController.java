@@ -1,10 +1,8 @@
 package auth.user;
 
-import java.security.Principal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import javax.annotation.security.RolesAllowed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import auth.security.JWTService;
 import auth.user.UserException.UserNotFoundException;
-import auth.user.UserException.UserForbiddenException;
 import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
